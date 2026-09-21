@@ -1,0 +1,9 @@
+services:
+  subtitle-fixer:
+    build: .
+    image: subtitle-rhythm-fixer:latest
+    container_name: subtitle-rhythm-fixer
+    ports:
+      # 宿主机端口:容器端口 —— 修改左侧端口即可更换访问端口
+      - "${APP_PORT:-8080}:80"
+    restart: unless-stopped
